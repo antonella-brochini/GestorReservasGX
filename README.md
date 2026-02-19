@@ -1,48 +1,22 @@
-# Gestor de Reservas Online – Proyecto Académico GeneXus
-
-Proyecto desarrollado en el marco del Taller GeneXus de la carrera Analista en Tecnologías de la Información – Universidad ORT Uruguay.
-
-Sistema web para la gestión y venta de entradas para espectáculos, con control de disponibilidad de asientos, gestión de precios y generación de tickets en PDF.
+# Gestor de Reservas Online – Sistema de Venta de Entradas
+Proyecto Académico – Taller GeneXus  
+Universidad ORT Uruguay
 
 ---
 
-## 🎯 Objetivo del sistema
+## 📌 Descripción General
 
-Permitir la administración integral de eventos, ventas de entradas y control de capacidad por sector, asegurando consistencia de datos y reglas de negocio.
+Sistema web desarrollado en GeneXus 18 para la gestión integral de venta de entradas para espectáculos (conciertos, obras de teatro, deportes, etc.).
 
----
-
-## ⚙️ Funcionalidades principales
-
-- Gestión de usuarios (compradores y vendedores)
-- Administración de eventos y categorías
-- Gestión de funciones (Performance)
-- Control de sectores y disponibilidad de asientos
-- Venta de entradas con validaciones
-- Generación automática de tickets en PDF
-- Reportes por fecha y por categoría
-- Actualización masiva de precios por sector
+La aplicación permite administrar eventos, funciones, sectores, disponibilidad de asientos, precios y ventas, garantizando integridad de datos mediante reglas de negocio y lógica transaccional.
 
 ---
 
-## 🧠 Aspectos Técnicos Implementados
+## 🏗️ Arquitectura y Modelo de Datos
 
-- Modelado de base de datos relacional mediante transacciones
-- Definición de reglas de negocio y eventos
-- Uso de Business Components
-- Implementación de Data Providers
-- Procedimientos con estructuras For Each
-- Consultas filtradas por fecha y categoría
-- Generación de archivos PDF desde procedimiento
-- Manejo de colecciones y lógica condicional
-- Índices de usuario optimizados
+El sistema fue diseñado utilizando modelado relacional mediante transacciones GeneXus, contemplando:
 
----
-
-## 🗂️ Modelo de Datos
-
-Incluye entidades como:
-
+### Entidades principales:
 - Country
 - Customer
 - Show
@@ -52,39 +26,99 @@ Incluye entidades como:
 - Ticket
 - Sale
 - Products (Snack, Drink, Souvenir)
+- Place
 
-Se implementaron relaciones entre entidades y subtipos para estructurar correctamente la información.
+### Características del modelo:
+- Relaciones entre entidades con claves foráneas
+- Uso de subtipos para estructuración jerárquica
+- Índices de usuario para optimización de consultas
+- Transacciones dinámicas
+- Business Components para manipulación programática
 
 ---
 
-## 📊 Procedimientos Implementados
+## ⚙️ Funcionalidades Implementadas
 
+### Gestión de Usuarios
+- Registro de compradores
+- Asociación con país
+
+### Gestión de Eventos
+- Catálogo de espectáculos
+- Clasificación por categoría
+- Asociación con lugar y fecha
+
+### Gestión de Funciones (Performance)
+- Control de capacidad por sector
+- Manejo de precios
+- Validaciones de disponibilidad
+
+### Venta de Entradas
+- Selección de sector
+- Control de cantidad
+- Registro de cliente
+- Generación de ticket
+
+### Generación de PDF
+- Procedimiento PrintTicket
+- Salida en formato PDF
+- Datos dinámicos por TicketId
+
+---
+
+## 🔎 Procedimientos y Lógica de Negocio
+
+### Consultas y Reportes
 - PerformanceByDate
 - PerformanceGroupByType
 - CountPerformance
-- PrintTicket (con salida PDF)
+
+### Gestión de Precios
 - UpdatePrice
 - IncreasePrice
-- ViewSectors
+- Aplicación de porcentaje sobre sectores seleccionados
+
+### Manejo de Colecciones
+- Uso de colecciones en eventos
+- Lógica condicional sobre selección múltiple
+
+### Business Components
+- Creación, actualización y eliminación programática
+- Manejo de mensajes de error
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🧠 Conceptos Técnicos Aplicados
+
+- Modelado relacional normalizado
+- Uso de For Each con filtros
+- Validaciones mediante reglas
+- Manejo de eventos (Insert, Update, Delete)
+- Parámetros de entrada en procedimientos
+- Generación de archivos externos (PDF)
+- Separación entre capa transaccional y lógica procedimental
+- Optimización mediante índices
+
+---
+
+## 🛠️ Tecnologías
 
 - GeneXus 18
 - Base de datos relacional
 - SQL
 - Business Components
 - Data Providers
+- Web Panels personalizados
 
 ---
 
-## 📁 Contenido del repositorio
+## 📂 Contenido del Repositorio
 
-El repositorio incluye el archivo `.xpz` exportado desde GeneXus, que contiene la Knowledge Base completa del sistema.
+El repositorio incluye el archivo `.xpz` que contiene la Knowledge Base completa exportada desde GeneXus.
 
 ---
 
-## 📌 Contexto académico
+## 👩‍💻 Contexto Académico
 
-Proyecto realizado como requisito obligatorio del Taller GeneXus.
+Proyecto desarrollado como requisito obligatorio del Taller GeneXus de la carrera Analista en Tecnologías de la Información.
+
